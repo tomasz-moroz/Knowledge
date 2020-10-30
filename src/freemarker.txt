@@ -1,0 +1,60 @@
+Strona do testowania kodu FreeMarkera - freemarker.apache.org
+1. POM
+
+   <dependency>
+            <groupId>org.freemarker</groupId>
+            <artifactId>freemarker</artifactId>
+            <version>2.3.30</version>
+        </dependency>
+        
+        2. Tworzymy klase ConfigProvider (ConfigProviade oraz TemplateProvider tworzymy w osobnym pakiecie freemarker)
+        
+        import javax.enterprise.context.ApplicationScoped;
+import freemarker.template.Configuration;
+import freemarker.template.TemplateExceptionHandler;
+
+@ApplicationScoped
+public class ConfigProvider {
+
+    private Configuration configuration;
+
+    public Configuration getConfiguration() {
+
+        if (configuration == null) {
+            configuration = new Configuration(Configuration.VERSION_2_3_30);
+            configuration.setDefaultEncoding("UTF-8");
+            configuration.setTemplateExceptionHandler(TemplateExceptionHandler.RETHROW_HANDLER);
+            configuration.setLogTemplateExceptions(false);
+            configuration.setWrapUncheckedExceptions(true);
+        }
+        return configuration;
+    }
+}
+
+3. Tworzymy klase TemplateProvider
+
+import freemarker.template.Configuration;
+import freemarker.template.Template;
+import java.io.IOException;
+import javax.enterprise.context.RequestScoped;
+import javax.inject.Inject;
+import javax.servlet.ServletContext;
+
+@RequestScoped
+public class TemplateProvider {
+
+  private final String TEMPLATES_DIRECTORY_PATH = "WEB-INF/fm-templates";
+
+  private Configuration configuration;
+
+  @Inject
+  private ConfigProvider configProvider;
+
+  public Template getTemplate(ServletContext servletContext, String templateName)
+      throws IOException {
+
+    configuration = configProvider.getConfiguration();
+    configuration.setServletContextForTemplateLoading(servletContext, TEMPLATES_DIRECTORY_PATH);
+    return configuration.getTemplate(templateName);
+  }
+}
