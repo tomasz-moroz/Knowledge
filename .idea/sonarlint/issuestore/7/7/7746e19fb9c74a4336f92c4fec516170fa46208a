@@ -1,0 +1,15 @@
+
+S
+java:S1444"1Make this "public static personToDto" field final(–º‰ªşÿÿÿÿ8í±©Ø.
+s
+java:S1104"WMake DtoToPerson a static final constant or non-public and provide accessors if needed.(¢ƒ8í±©Ø.
+D
+java:S1604"(Make this anonymous inner class a lambda(¢ƒ8í±©Ø.
+y
+java:S1104"WMake personToDto a static final constant or non-public and provide accessors if needed.(–º‰ªşÿÿÿÿ8í±©Ø.
+r
+java:S3008"VRename this field "DtoToPerson" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¢ƒ8í±©Ø.
+M
+java:S1444"1Make this "public static DtoToPerson" field final(¢ƒ8í±©Ø.
+J
+java:S1604"(Make this anonymous inner class a lambda(–º‰ªşÿÿÿÿ8í±©Ø.

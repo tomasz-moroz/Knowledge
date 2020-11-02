@@ -102,6 +102,8 @@ serverTimezone=Europe/Warsaw</url>
 
 ## ADNOTACJE
 
+- Hibernate wymaga bezparametrowego konstruktora w klasie encyjnej
+
 - @Entity – na klasie – tworzy klasę encyjną
 - @Table – na klasie – klasa zostaje zmapowana na tabelę w bazie danych
 - @Id – na polu – pole zostaje zmapowane na klucz główny
@@ -112,8 +114,16 @@ serverTimezone=Europe/Warsaw</url>
 - @ManyToMany - "Zademonstruję relację Many to Many (wiele do wielu) na przykładzie encji Recipe i Ingridients. Każdy przepis (Recipe) może mieć wiele składników (Ingridients), ale każdy ze składników może występować w wielu przepisach."
 
 - fetch = FetchType.LAZY/EAGER - Lazy pobieramy tylko to co jest potrzebne, Eager pobieramy cala czesc bazy danych. 
+- nullable - czy w kolumnie moga byc puste wartosci, domyslnie moga
+- unique - true/false - czy w komumnie moga sie powtarzac wartosci, domyslnie moga
+- name = "" - kiedy chcemy nazwac kolumne inaczej niz zazwa pola, domyslnie jest nazwa pola
+- columnDefinition - definiujemy typ danych, na typ SQLowyn np. TEXT to String. Domyslnie jest var char czyli wszystko, najbardziej ogolny typ. Lepiej tego nie robic poniewaz mozna zdefiniowac typ danych dla roznych silnikow SQL i w przypadku zmiany silnika trzeba bedzie zmieniac ustawienia column
+- lenght - definiujemy pojemnosc pola w danej kolumnie, domyslnie jest 255 znakow
+- precision oraz scala - okreslamyu dokladnosc wartosci liczbowych
 
-
+- CascadeType w Hib. może być ODŚWIEŻENIE, ŁĄCZENIE, ..., WSZYSTKO, co umieścisz pod powiązaną jednostką, określa zachowanie powiązanej jednostki, jeśli bieżąca encja jest: odświeżona, zaktualizowana, usunięta itp. Tak więc za każdym razem, gdy wpływa na ciebie encja, CascadeType mówi czy podmiot powiązany również powinien zostać dotknięty.
+ 
+- FetchType może mieć tylko 2: EAGER i LAZY. Ten, który również umieszczasz pod podmiotem powiązanym, określa, czy podmiot powiązany powinien zostać zainicjowany natychmiast po zainicjowaniu bieżącego podmiotu (EAGER), czy tylko na żądanie (LAZY).
 
 
 

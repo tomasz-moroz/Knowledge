@@ -1,0 +1,11 @@
+
+D
+java:S1481")Remove this unused "name" local variable.(ûÁéê8é‡•ÀØ.
+|
+java:S1989"aHandle the following exceptions that could be thrown by "forward": ServletException, IOException.(ó˜•Ô8é‡•ÀØ.
+p
+java:S1989"PHandle the following exception that could be thrown by "getWriter": IOException.(À¿ú©şÿÿÿÿ8é‡•ÀØ.
+M
+java:S1481"-Remove this unused "lastName" local variable.(¢Æ¢ûÿÿÿÿ8é‡•ÀØ.
+N
+java:S1481".Remove this unused "birthDate" local variable.(İ¡¬±üÿÿÿÿ8é‡•ÀØ.

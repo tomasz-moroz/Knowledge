@@ -1,0 +1,17 @@
+
+p
+java:S3008"SRename this field "DtoToCar" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ó´âð8±Ü¡©Ø.
+K
+java:S1444".Make this "public static DtoToCar" field final(ó´âð8±Ü¡©Ø.
+q
+java:S1104"TMake CarToDto a static final constant or non-public and provide accessors if needed.(ï­Éñ8Í¯ª©Ø.
+K
+java:S1444".Make this "public static CarToDto" field final(ï­Éñ8Í¯ª©Ø.
+E
+java:S1604"(Make this anonymous inner class a lambda(ó´âð8Àð ©Ø.
+q
+java:S1104"TMake DtoToCar a static final constant or non-public and provide accessors if needed.(ó´âð8±Ü¡©Ø.
+E
+java:S1604"(Make this anonymous inner class a lambda(ï­Éñ8Àð ©Ø.
+p
+java:S3008"SRename this field "CarToDto" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ï­Éñ8Í¯ª©Ø.
