@@ -10,9 +10,3 @@ I
 Knowledge.iml,2/c/2c045347fcfce18a49acbc1b66e266fa871d88e5
 7
 pom.xml,4/4/442292b8a7efeabbe4cc176709b833b1792140ec
-B
-SQL/CommandsSQL.md,b/8/b85fe962d9860f7e594a82b8026762dc5e7f82bc
-=
-SQL/InnerJoin,e/e/ee065e0b891f3ce5fa2b6b4d6a4f62eb0105e141
->
-SQL/SelectFrom,a/1/a1e40ac530ae69afd2dc6400674c738c1da39b29
