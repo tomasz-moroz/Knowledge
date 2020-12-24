@@ -1,5 +1,8 @@
 package pl.knowledge.yt_podstawyJUnit;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class CarService {
 
     public boolean analyzeCarByParams(Integer threadThickness, Integer fuelUsage, Integer carMillage){
@@ -34,5 +37,24 @@ public class CarService {
             return true;
         }
         return false;
+    }
+
+    public List<CarDiagnosticResult> analyzeCars(List<CarDetails> carsDetails) {
+
+        List<CarDiagnosticResult> results = new ArrayList<>();
+        carsDetails.forEach(details -> {
+
+            boolean analyzeResult = analyzeSingle(details);
+            results.add(new CarDiagnosticResult(details.getId(), analyzeResult));
+        });
+        return results;
+    }
+
+    private boolean analyzeSingle(CarDetails carDetails) {
+
+        Integer treadThickness = carDetails.getTreadThickness();
+        Integer fuelUsage = carDetails.getFuelUsage();
+        Integer carMillage = carDetails.getCarMillage();
+        return analyzeCarByParams(treadThickness, fuelUsage, carMillage);
     }
 }

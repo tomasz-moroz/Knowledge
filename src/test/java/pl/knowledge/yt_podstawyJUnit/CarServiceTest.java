@@ -2,11 +2,31 @@ package pl.knowledge.yt_podstawyJUnit;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.MethodSource;
+
+import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class CarServiceTest {
 
+    private static Stream<Arguments>data(){
+        return Stream.of(Arguments.of(3,5,1500,true),
+                Arguments.of(3,5,21000,false),
+                Arguments.of(2,14,0,false));
+    }
+    @ParameterizedTest
+    @MethodSource("data")
+    void analyzeCarByParams_withDataFromMethod_resultFromData(Integer threadThickness, Integer fuelUsage, Integer carMillage, boolean expectedResult) {
+        //given
+        CarService carService = new CarService();
+        //when
+        boolean result = carService.analyzeCarByParams(threadThickness, fuelUsage, carMillage);
+        //then
+        Assertions.assertEquals(expectedResult, result);
+    }
 
     @Test
     void analyzeCarByParams_millageNull_throwsIllegalArgumentException() {
